@@ -28,8 +28,4 @@ let cities = [{
     state: "AZ",
     population: 1660272
   }
-<<<<<<< HEAD
   ];
-=======
-  ];
->>>>>>> 4ff430248cb0e0f93572142fd7b9587dd2b68994
