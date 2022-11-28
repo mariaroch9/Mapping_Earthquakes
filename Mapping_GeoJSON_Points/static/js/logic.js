@@ -25,11 +25,12 @@ let sanFranAirport =
 ]};
 
 // Grabbing our GeoJSON data.
-L.geoJSON(sanFranAirport).addTo(map);
+L.geoJSON(sanFranAirport, {
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("<h2> Airport Code: " + feature.properties.faa + "</h2><hr><h3>  Airport Name: "+ feature.properties.name + "<h3>")
+     }
 
-
-
-
+  }).addTo(map);
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
