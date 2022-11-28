@@ -1,0 +1,10 @@
+// Grabbing our GeoJSON data.
+d3.json(airportData).then(function(data){
+  console.log(data);
+ 
+L.geoJson(data, {
+  onEachFeature: function(features, layer){
+    layer.bindPopup("<h3>Airport code: " + features.properties.faa + "</h3> <hr> <h4>Airport name: " + features.properties.name + "</h4>")
+  }
+}).addTo(map);
+});
